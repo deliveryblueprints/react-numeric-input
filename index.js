@@ -337,7 +337,7 @@ module.exports =
 
 	            var _step = +access(this.props, "step", NumericInput.defaultProps.step, this, n > 0 ? NumericInput.DIRECTION_UP : NumericInput.DIRECTION_DOWN);
 
-	            var _n = this._toNumber((this.state.value || 0) + _step * n);
+	            var _n = this._toNumber((parseFloat(this.state.value) || 0) + _step * n);
 
 	            if (this.props.snap) {
 	                _n = Math.round(_n / _step) * _step;

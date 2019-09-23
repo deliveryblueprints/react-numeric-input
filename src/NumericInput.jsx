@@ -674,7 +674,7 @@ class NumericInput extends Component
             )
         );
 
-        let _n = this._toNumber((this.state.value || 0) + _step * n);
+        let _n = this._toNumber((parseFloat(this.state.value) || 0) + _step * n);
 
         if (this.props.snap) {
             _n = Math.round(_n / _step) * _step
