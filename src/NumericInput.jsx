@@ -712,7 +712,8 @@ class NumericInput extends Component
                 if (e.keyCode === 8) { // backspace
                     if (this.refsInput.selectionStart == this.refsInput.selectionEnd &&
                         this.refsInput.selectionEnd > 0 &&
-                        value.length )
+                        value.length &&
+                        !value.charAt(this.refsInput.selectionEnd - 1) === ".")
                     {
                         e.preventDefault();
                         this.refsInput.selectionStart = this.refsInput.selectionEnd = this.refsInput.selectionEnd - 1;
@@ -722,7 +723,7 @@ class NumericInput extends Component
                     if (this.refsInput.selectionStart == this.refsInput.selectionEnd &&
                         this.refsInput.selectionEnd < length + 1 &&
                         value.length &&
-                        value.charAt(this.refsInput.selectionEnd) === ".")
+                        !value.charAt(this.refsInput.selectionEnd) === ".")
                     {
                         e.preventDefault();
                         this.refsInput.selectionStart = this.refsInput.selectionEnd = this.refsInput.selectionEnd + 1;
