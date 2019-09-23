@@ -331,7 +331,6 @@ module.exports =
 	    }, {
 	        key: '_step',
 	        value: function _step(n, callback) {
-	            debugger;
 	            var _isStrict = this._isStrict;
 	            this._isStrict = true;
 
@@ -402,7 +401,7 @@ module.exports =
 
 	            var callback = arguments[1];
 
-	            debugger;
+
 	            this.stop();
 	            this._step(1, callback);
 	            var _max = +access(this.props, "max", NumericInput.defaultProps.max, this);

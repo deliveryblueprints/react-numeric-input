@@ -658,7 +658,6 @@ class NumericInput extends Component
      */
     _step(n: number, callback?: Function): boolean
     {
-        debugger;
         let _isStrict = this._isStrict;
         this._isStrict = true;
 
@@ -753,7 +752,7 @@ class NumericInput extends Component
      */
     increase(_recursive: boolean = false, callback?: Function): void
     {
-        debugger;
+
         this.stop();
         this._step(1, callback);
         let _max = +access(this.props, "max", NumericInput.defaultProps.max, this);
