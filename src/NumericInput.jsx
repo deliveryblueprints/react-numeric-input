@@ -708,7 +708,6 @@ class NumericInput extends Component
             }
             else {
                 let value = this.refsInput.value, length = value.length;
-                debugger;
                 if (e.keyCode === 8) { // backspace
                     if (this.refsInput.selectionStart == this.refsInput.selectionEnd &&
                         this.refsInput.selectionEnd > 0 &&
