@@ -176,7 +176,7 @@ module.exports =
 	        key: 'componentDidUpdate',
 	        value: function componentDidUpdate(prevProps, prevState) {
 	            debugger;
-	            if (prevState.value !== this.state.value && this.state.value === null) {
+	            if (this.state.value === null) {
 	                    this._invokeEventCallback("onChange", this.state.value, this.refsInput.value, this.refsInput);
 	                }
 

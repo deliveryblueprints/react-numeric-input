@@ -438,8 +438,8 @@ class NumericInput extends Component
         // many reasons for changing the value and this is the common place
         // that can capture them all
         debugger;
-        if (prevState.value !== this.state.value // no onChange if the value remains the same
-            && (this.state.value === null) // only if changing to number or null
+        if (
+            this.state.value === null // only if changing to number or null
         ) {
             this._invokeEventCallback("onChange", this.state.value, this.refsInput.value, this.refsInput)
         }
