@@ -628,10 +628,11 @@ class NumericInput extends Component
     _parse(x: string): number
     {
         x = String(x);
-        if (typeof this.props.parse == 'function') {
-            return parseFloat(this.props.parse(x));
-        }
-        return parseFloat(x);
+        // if (typeof this.props.parse == 'function') {
+        //     return parseFloat(this.props.parse(x));
+        // }
+        // return parseFloat(x);
+        return x;
     }
 
     /**
@@ -1102,7 +1103,7 @@ class NumericInput extends Component
                     this._isStrict = true
                     args[0].persist();
                     this._inputFocus = false;
-                    const val = args[0].target.value;
+                    const val = this._parse(args[0].target.value);
                     this.setState({
                         value: val
                     }, () => {

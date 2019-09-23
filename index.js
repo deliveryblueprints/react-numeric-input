@@ -310,10 +310,8 @@ module.exports =
 	        key: '_parse',
 	        value: function _parse(x) {
 	            x = String(x);
-	            if (typeof this.props.parse == 'function') {
-	                return parseFloat(this.props.parse(x));
-	            }
-	            return parseFloat(x);
+
+	            return x;
 	        }
 	    }, {
 	        key: '_format',
@@ -718,7 +716,7 @@ module.exports =
 	                        _this6._isStrict = true;
 	                        args[0].persist();
 	                        _this6._inputFocus = false;
-	                        var val = args[0].target.value;
+	                        var val = _this6._parse(args[0].target.value);
 	                        _this6.setState({
 	                            value: val
 	                        }, function () {
