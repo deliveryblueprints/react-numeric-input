@@ -439,7 +439,7 @@ class NumericInput extends Component
         // that can capture them all
         if (!this._ignoreValueChange // no onChange if re-rendered with different value prop
             && prevState.value !== this.state.value // no onChange if the value remains the same
-            && (!isNaN(this.state.value) || this.state.value === null) // only if changing to number or null
+            && (this.state.value === null) // only if changing to number or null
         ) {
             this._invokeEventCallback("onChange", this.state.value, this.refsInput.value, this.refsInput)
         }
