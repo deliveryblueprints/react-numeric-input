@@ -712,8 +712,7 @@ class NumericInput extends Component
                 if (e.keyCode === 8) { // backspace
                     if (this.refsInput.selectionStart == this.refsInput.selectionEnd &&
                         this.refsInput.selectionEnd > 0 &&
-                        value.length &&
-                        value.charAt(this.refsInput.selectionEnd - 1) === ".")
+                        value.length )
                     {
                         e.preventDefault();
                         this.refsInput.selectionStart = this.refsInput.selectionEnd = this.refsInput.selectionEnd - 1;
