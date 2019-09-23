@@ -1102,7 +1102,7 @@ class NumericInput extends Component
                     this._isStrict = true
                     args[0].persist();
                     this._inputFocus = false;
-                    const val = this._parse(args[0].target.value);
+                    const val = args[0].target.value;
                     this.setState({
                         value: val
                     }, () => {

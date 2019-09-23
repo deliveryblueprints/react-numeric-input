@@ -718,7 +718,7 @@ module.exports =
 	                        _this6._isStrict = true;
 	                        args[0].persist();
 	                        _this6._inputFocus = false;
-	                        var val = _this6._parse(args[0].target.value);
+	                        var val = args[0].target.value;
 	                        _this6.setState({
 	                            value: val
 	                        }, function () {
