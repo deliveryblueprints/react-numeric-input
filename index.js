@@ -176,7 +176,7 @@ module.exports =
 	        key: 'componentDidUpdate',
 	        value: function componentDidUpdate(prevProps, prevState) {
 	            debugger;
-	            if (prevState.value !== this.state.value || this.state.value === null) {
+	            if (prevState.value !== this.state.value && (!isNaN(this.state.value) || this.state.value === null)) {
 	                    this._invokeEventCallback("onChange", this.state.value, this.refsInput.value, this.refsInput);
 	                }
 
@@ -310,7 +310,6 @@ module.exports =
 	        key: '_parse',
 	        value: function _parse(x) {
 	            x = String(x);
-
 	            return x;
 	        }
 	    }, {

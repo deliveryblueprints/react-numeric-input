@@ -439,7 +439,7 @@ class NumericInput extends Component
         // that can capture them all
         debugger;
         if (prevState.value !== this.state.value // no onChange if the value remains the same
-            || (this.state.value === null) // only if changing to number or null
+        && (!isNaN(this.state.value) || this.state.value === null)  // only if changing to number or null
         ) {
             this._invokeEventCallback("onChange", this.state.value, this.refsInput.value, this.refsInput)
         }
@@ -628,10 +628,6 @@ class NumericInput extends Component
     _parse(x: string): number
     {
         x = String(x);
-        // if (typeof this.props.parse == 'function') {
-        //     return parseFloat(this.props.parse(x));
-        // }
-        // return parseFloat(x);
         return x;
     }
 
