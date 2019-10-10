@@ -175,11 +175,6 @@ module.exports =
 	    }, {
 	        key: 'componentDidUpdate',
 	        value: function componentDidUpdate(prevProps, prevState) {
-	            console.log("q " + this.state.value);
-
-	            console.log("q prevState.value " + prevState.value);
-	            console.log("q is null " + this.state.value === null);
-
 	            if (prevState.value !== this.state.value || this.state.value === null) {
 	                    this._invokeEventCallback("onChange", this.state.value, this.refsInput.value, this.refsInput);
 	                }
@@ -671,14 +666,10 @@ module.exports =
 	                    onChange: function onChange(e) {
 	                        var original = e.target.value;
 	                        var val = _this6._parse(original);
-	                        console.log("123456 original " + original);
-	                        console.log("123456 val " + val);
 
 	                        if (isNaN(val)) {
 	                            val = null;
 	                        }
-	                        console.log("123456 this._isStrict " + _this6._isStrict);
-	                        console.log("123456 number " + _this6._toNumber(val));
 
 	                        _this6.setState({
 	                            value: _this6._isStrict ? _this6._toNumber(val) : val,

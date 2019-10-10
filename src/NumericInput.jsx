@@ -434,10 +434,6 @@ class NumericInput extends Component
      */
     componentDidUpdate(prevProps: Object, prevState: Object): void
     {
-        console.log("q " + this.state.value);
-
-        console.log("q prevState.value " + prevState.value);
-        console.log("q is null " + this.state.value === null);
 
         // Call the onChange if needed. This is placed here because there are
         // many reasons for changing the value and this is the common place
@@ -1069,16 +1065,11 @@ class NumericInput extends Component
             Object.assign(attrs.input, {
                 onChange : e => {
                     const original = e.target.value;
-                    let val = this._parse(original)
-                    console.log("123456 original " + original);
-                    console.log("123456 val " + val);
+                    let val = this._parse(original);
 
                     if (isNaN(val)) {
                         val = null
                     }
-                    console.log("123456 this._isStrict " + this._isStrict);
-                    console.log("123456 number " + this._toNumber(val));
-
 
                     this.setState({
                         value: this._isStrict ? this._toNumber(val) : val,
