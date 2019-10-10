@@ -666,12 +666,17 @@ module.exports =
 
 	                _extends(attrs.input, {
 	                    onChange: function onChange(e) {
-	                        debugger;
 	                        var original = e.target.value;
 	                        var val = _this6._parse(original);
+	                        console.log("123456 original " + original);
+	                        console.log("123456 val " + val);
+
 	                        if (isNaN(val)) {
 	                            val = null;
 	                        }
+	                        console.log("123456 this._isStrict " + _this6._isStrict);
+	                        console.log("123456 number " + _this6._toNumber(val));
+
 	                        _this6.setState({
 	                            value: _this6._isStrict ? _this6._toNumber(val) : val,
 	                            stringValue: original
