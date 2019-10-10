@@ -1065,6 +1065,7 @@ class NumericInput extends Component
 
             Object.assign(attrs.input, {
                 onChange : e => {
+                    debugger;
                     const original = e.target.value;
                     let val = this._parse(original)
                     if (isNaN(val)) {

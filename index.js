@@ -177,7 +177,7 @@ module.exports =
 	        value: function componentDidUpdate(prevProps, prevState) {
 	            console.log("12345 " + this.state.value);
 
-	            if (prevState.value !== this.state.value && (this.state.value !== "" || this.state.value === null)) {
+	            if (prevState.value !== this.state.value && this.state.value === null) {
 	                    this._invokeEventCallback("onChange", this.state.value, this.refsInput.value, this.refsInput);
 	                }
 
@@ -666,6 +666,7 @@ module.exports =
 
 	                _extends(attrs.input, {
 	                    onChange: function onChange(e) {
+	                        debugger;
 	                        var original = e.target.value;
 	                        var val = _this6._parse(original);
 	                        if (isNaN(val)) {
