@@ -1065,12 +1065,18 @@ class NumericInput extends Component
 
             Object.assign(attrs.input, {
                 onChange : e => {
-                    debugger;
                     const original = e.target.value;
                     let val = this._parse(original)
+                    console.log("123456 original " + original);
+                    console.log("123456 val " + val);
+
                     if (isNaN(val)) {
                         val = null
                     }
+                    console.log("123456 this._isStrict " + this._isStrict);
+                    console.log("123456 number " + this._toNumber(val));
+
+
                     this.setState({
                         value: this._isStrict ? this._toNumber(val) : val,
                         stringValue: original
