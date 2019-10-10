@@ -434,7 +434,11 @@ class NumericInput extends Component
      */
     componentDidUpdate(prevProps: Object, prevState: Object): void
     {
-        console.log("12345 " + this.state.value);
+        console.log("q " + this.state.value);
+
+        console.log("q prevState.value " + prevState.value);
+        console.log("q is null " + this.state.value === null);
+
         // Call the onChange if needed. This is placed here because there are
         // many reasons for changing the value and this is the common place
         // that can capture them all
