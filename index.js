@@ -176,7 +176,8 @@ module.exports =
 	        key: 'componentDidUpdate',
 	        value: function componentDidUpdate(prevProps, prevState) {
 	            console.log("numeric state", this.state.value);
-	            if (prevState.value !== this.state.value || this.state.value === null || this.state.value !== undefined) {
+	            if (prevState.value !== this.state.value || this.state.value !== null) {
+	                    console.log("inside if statement", this.state.value);
 	                    this._invokeEventCallback("onChange", this.state.value, this.refsInput.value, this.refsInput);
 	                }
 
