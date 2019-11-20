@@ -438,8 +438,7 @@ class NumericInput extends Component
         // Call the onChange if needed. This is placed here because there are
         // many reasons for changing the value and this is the common place
         // that can capture them all
-        console.log("numeric state", this.state.value);
-        if (prevState.value !== this.state.value ||  this.state.value !== null // only if changing to number or null // no onChange if the value remains the same
+        if (prevState.value !== this.state.value ||  this.state.value === null  // only if changing to number or null // no onChange if the value remains the same
         ) {
             console.log("inside if statement", this.state.value);
             this._invokeEventCallback("onChange", this.state.value, this.refsInput.value, this.refsInput)
@@ -950,7 +949,7 @@ class NumericInput extends Component
             (state.value || state.value === 0 ? state.value : "") ||
 
             // or finally use ""
-            ""
+            undefined
         );
 
         let loose = !this._isStrict && (this._inputFocus || !this._isMounted)

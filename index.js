@@ -175,8 +175,7 @@ module.exports =
 	    }, {
 	        key: 'componentDidUpdate',
 	        value: function componentDidUpdate(prevProps, prevState) {
-	            console.log("numeric state", this.state.value);
-	            if (prevState.value !== this.state.value || this.state.value !== null) {
+	            if (prevState.value !== this.state.value || this.state.value === null) {
 	                    console.log("inside if statement", this.state.value);
 	                    this._invokeEventCallback("onChange", this.state.value, this.refsInput.value, this.refsInput);
 	                }
@@ -556,7 +555,7 @@ module.exports =
 	                }
 	            };
 
-	            var stringValue = String(state.stringValue || (state.value || state.value === 0 ? state.value : "") || "");
+	            var stringValue = String(state.stringValue || (state.value || state.value === 0 ? state.value : "") || undefined);
 
 	            var loose = !this._isStrict && (this._inputFocus || !this._isMounted);
 
