@@ -956,7 +956,7 @@ class NumericInput extends Component
             (state.value || state.value === 0 ? state.value : "") ||
 
             // or finally use ""
-            undefined
+            ""
         );
 
         let loose = !this._isStrict && (this._inputFocus || !this._isMounted)

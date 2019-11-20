@@ -560,7 +560,7 @@ module.exports =
 	                }
 	            };
 
-	            var stringValue = String(state.stringValue || (state.value || state.value === 0 ? state.value : "") || undefined);
+	            var stringValue = String(state.stringValue || (state.value || state.value === 0 ? state.value : "") || "");
 
 	            var loose = !this._isStrict && (this._inputFocus || !this._isMounted);
 
