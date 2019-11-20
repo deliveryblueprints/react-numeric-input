@@ -176,7 +176,12 @@ module.exports =
 	        key: 'componentDidUpdate',
 	        value: function componentDidUpdate(prevProps, prevState) {
 	            if (prevState.value !== this.state.value) {
-	                    console.log("inside if statement", this.state.value);
+	                    console.log("12345 inside if statement");
+
+	                    console.log("12345 prev state: ", prevState.value);
+
+	                    console.log("12345 current state: ", this.state.value);
+
 	                    this._invokeEventCallback("onChange", this.state.value, this.refsInput.value, this.refsInput);
 	                }
 

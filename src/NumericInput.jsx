@@ -440,7 +440,14 @@ class NumericInput extends Component
         // that can capture them all
         if (prevState.value !== this.state.value // only if changing to number or null // no onChange if the value remains the same
         ) {
-            console.log("inside if statement", this.state.value);
+            console.log("12345 inside if statement")
+
+            console.log("12345 prev state: ", prevState.value)
+
+            console.log("12345 current state: ", this.state.value)
+
+
+
             this._invokeEventCallback("onChange", this.state.value, this.refsInput.value, this.refsInput)
         }
 
